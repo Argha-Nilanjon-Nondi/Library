@@ -47,8 +47,7 @@ else if(book_web.checked){
 else if(book_hacking.checked){
     type=book_hacking.value;
   }
- 
- alert("00000")
+
  let obj=new Book(book_name,author_name,type);
  obj.add();
 
