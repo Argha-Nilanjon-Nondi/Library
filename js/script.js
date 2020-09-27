@@ -29,6 +29,22 @@ e.preventDefault()
 
  let book_name=document.getElementById("inputBookName").value;
  let author_name=document.getElementById("inputAuthorName").value;
+ let message=document.getElementById("message");
+ 
+ if(book_name.length == 0 || author.name==0){
+  
+ message.innerHTML=`
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Warning</strong> You book name or author name is not valid.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ `;
+ 
+ return 0;
+ }
+ 
  let type;
  
 let book_coding=document.getElementById("coding") ;   let book_web=document.getElementById("web");
@@ -50,5 +66,14 @@ else if(book_hacking.checked){
 
  let obj=new Book(book_name,author_name,type);
  obj.add();
+ message.innerHTML=`
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Book added</strong> You book is added successfully.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ `;
+ 
 
 });
